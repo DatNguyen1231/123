@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\QLVLXD1.props" />
+</Project>

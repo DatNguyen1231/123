@@ -1,0 +1,60 @@
+<div>
+    <!-- <h1>xin chào : {{nameLogin}}</h1> -->
+   </div>
+   <div >
+       <button mat-button style="font-size: 20px;" > <mat-icon mat-list-icon class="cc">home</mat-icon> Home / </button>
+       <button mat-button style="font-size: 20px;"> <mat-icon class="nav-icon nav-icon-cart" class="cc">shopping_cart_checkout</mat-icon> Duyệt Đơn</button>
+       
+   </div>
+   
+   <input type="date" id="datePicker">
+       <table class="data-table">
+         <thead>
+           <tr>
+               <th>Tài khoản</th>
+               <th>Tên hàng hóa</th>
+               <th>ảnh</th>
+               <th>Số lượng</th>
+               
+               <th>Giá</th>
+               <th>Thành tiền</th>
+               <th>Ngày mua</th>
+               
+               <th>Xử lý đơn hàng    </th>
+           </tr>
+         </thead>
+       
+         <tr *ngFor="let item of dataGioHang; let i=index">
+            <td>{{item.TenDangNhap}}</td>
+            <td>{{item.TenHang}}</td>
+            <td><img [src]="item.Anh" alt="Lỗi" /> </td>
+            <td>{{item.SoLuong }}</td>
+            
+            <td class="price">
+              <a *ngIf="item.GiamGia!=0" class="price-sale">  {{item.DonGia |number:'1.0-0'}}đ </a> 
+              <a style="color: red;">{{item.DonGia-item.DonGia*item.GiamGia/100 |number:'1.0-0'}}đ</a>
+            </td>
+            <td>{{item.ThanhTien |number:'1.0-0'}}đ</td>
+            <td>8-6-2023</td>
+
+           
+            <td>
+                <div class="clxacnhan">
+                    <button (click)="suaGioHang(i,3)" class="XacNhan"  >Xác Nhận</button>
+                    <button (click)="suaGioHang(i,4)" class="huy"  >Hủy đơn</button>
+                </div>
+            </td>
+            
+           
+          </tr>
+           
+         
+       </table>
+   
+      
+      
+   
+       
+       
+   
+   

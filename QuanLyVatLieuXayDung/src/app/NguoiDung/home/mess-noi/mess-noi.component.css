@@ -1,0 +1,132 @@
+:host {
+    width: auto;
+    height: auto;
+    display: block;
+    padding: 20px;
+    background-color: #f8f8f8;
+    
+  }
+  
+  .modal-title {
+    color: #333333;
+  }
+  
+  .modal-body {
+    background-color: #ffffff;
+  }
+  
+  .modal-footer {
+    background-color: #f8f8f8;
+  }
+  
+  .modal-footer button {
+    color: #ffffff;
+    background-color: #1e90ff;
+  }
+  
+  
+  .ThemGioHang {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+     position: relative;
+     
+  }
+
+  
+  .close-button {
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.close-icon {
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: #000000;
+  border-radius: 50%;
+}
+
+.close-icon:hover {
+  background-color: #ff0000;
+}
+
+  .close:hover {
+    opacity: 1;
+  }
+  
+  .close span {
+    position: relative;
+    top: -2px;
+  }
+
+  .noi-dung {
+    display: flex;
+    flex-direction: column;
+   
+    align-items: center;
+  }
+  .Gia h2 {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  .number{
+    display: flex;
+    padding: 5px;
+  }
+  img{
+    width: 400px;
+    height: 300px;
+  }
+  label {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  input[type="number"] {
+    width: 110px;
+    padding: 5px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  .input-soluong{
+    
+    background-color: #ffacac;
+   color: #ff0000;
+   animation: shake 0.5s;
+  }
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

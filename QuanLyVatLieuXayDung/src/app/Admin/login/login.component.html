@@ -1,0 +1,62 @@
+<div class="all">
+  
+  <div class="logo">
+
+    <img src="assets/img/logo.png" alt="" >
+    <h1>Xốp Bi</h1>
+    <h1 class="h1" *ngIf="!loai" style="color: black;">Đăng nhập</h1>
+    <h1 class="h1" *ngIf="loai" style="color: black;">Đăng kí</h1>
+  </div>
+
+<div *ngIf="!loai" class="login-container">
+    
+    <form class="login">
+        <h1>Đăng nhập</h1>
+      <input (click)="sai()" [(ngModel)]="userName" name="UserName"   type="text" placeholder="Tài khoản" >
+      <input (click)="sai()" [(ngModel)]="passWord" name="=passWord" type="password" placeholder="Mật khẩu">
+      
+      <label class="mess" style="color: red;">{{Mess}}</label><br>
+      <button (click)="loGin()" type="submit">Login</button>
+
+      <div class="DangKi">
+        <label for="">Bạn chưa có tải khoản ?</label>
+        <button (click)=" Dangki()" type="submit">Đăng kí</button>
+      </div>
+      
+     
+    </form>
+  </div>
+
+  <div *ngIf="loai" class="login-container">
+      <form class="login">
+
+        <h1>Đăng kí</h1>
+      <input (click)="sai()" [(ngModel)]="userName" name="UserName"   type="text" placeholder="Tài khoản" >
+      <input (click)="sai()" [(ngModel)]="passWord" name="=passWord" type="password" placeholder="Mật khẩu">
+      <input (click)="sai()" [(ngModel)]="confirmpassWord" name="=Confirm Password" type="Confirm Password" placeholder="Nhập lại mật khẩu">
+      <label class="mess" style="color: red;">{{Mess}}</label><br>
+      <button (click)="themtk()" type="submit">Supmit</button>
+
+      <div class="DangKi">
+        <label for="">Bạn đã có tải khoản ?</label>
+        <button (click)=" Dangki()" type="submit">Đăng nhập</button>
+      </div>
+      
+    
+    </form>
+    </div>
+
+      
+  <div>
+
+  </div>
+  <div *ngFor="let item of dataUser ;let i=index " style="display: inline; width: auto ;height: auto;">
+      
+    <li> <a>UserName: {{item.TenDangNhap}}</a></li>
+    <li><a>passWord: {{item.MatKhau}}</a></li> 
+    <li><button (click)="xoaTK(i)">xóa</button></li>
+    <br>
+   </div>
+
+
+</div>

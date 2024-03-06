@@ -1,0 +1,93 @@
+
+
+
+
+  <div class="welcome-text">
+  Xin chào: {{ nameLogin }}
+</div>
+
+<div class="search-bar">
+  <button (click)="getKho()" mat-button class="nav-button">
+    <mat-icon class="nav-icon">schedule</mat-icon>
+    Tất cả sản phẩm
+  </button>
+  <button (click)="tim1()" mat-button class="nav-button">
+    <mat-icon class="nav-icon">schedule</mat-icon>
+    Mới nhất
+  </button>
+  <button (click)="tim2()" mat-button class="nav-button">
+    <mat-icon class="nav-icon">local_fire_department</mat-icon>
+    Bán chạy
+  </button>
+  <button (click)="tim()" mat-button class="nav-button">
+    <mat-icon class="nav-icon">local_offer</mat-icon>
+    Giảm giá
+  </button>
+  <div class="search-input-container">
+    <input type="text" [(ngModel)]="key" placeholder="Tìm kiếm theo tên hàng" (keyup)="searchByTenHang()" class="search-input">
+    <div class="search-icon">
+      <mat-icon class="nav-icon">search</mat-icon>
+    </div>
+  </div>
+  <button mat-button [routerLink]="['/Shop']" class="cart-button">
+    <mat-icon class="nav-icon">add_shopping_cart</mat-icon>
+    GIỏ hàng
+  </button>
+</div>
+
+  
+  <section id="product-list">
+    <div class="product-item" *ngFor="let item of getDataKho; let i=index" >
+
+   
+      <div *ngIf="item.GiamGia!=0" class="sale-tag">Giảm giá {{item.GiamGia}}%</div>
+      <img [src]="item.Anh" alt="Sản phẩm 1">
+      <h2>{{ item.TenHang.length > 10 ? ( item.TenHang | slice:0:40) + '...' : item.TenHang }}</h2>
+      <h2 class="price">
+        <a *ngIf="item.GiamGia!=0" class="price-sale">  {{item.DonGia |number:'1.0-0'}}đ </a>  
+         <a>{{item.DonGia-item.DonGia*item.GiamGia/100 |number:'1.0-0'}}đ</a>
+      </h2>
+     
+      <div class="button-container" >
+        <button (click)="themGioHang(i)" class="add-to-cart">
+          <mat-icon class="t">add_shopping_cart</mat-icon >  Thêm vào giỏ hàng
+        </button>
+        <button (click)="them(i)" type="button" class="buy-now">
+          <mat-icon> credit_card</mat-icon> Mua ngay
+        </button>
+        <!-- <button type="button" class="installment">
+          <mat-icon class="credit-card-icon">credit_card</mat-icon> Mua trả góp
+        </button>
+        <br> -->
+        <h3>
+         <label >Đã bán: {{item.DaBan}}</label>
+         <label > còn lại:{{item.SoLuongHH}}</label><br>
+  
+         <!-- <i class="star1" (click)="toggleStar(0)">
+          <mat-icon [class.active]="stars[0]">star_border</mat-icon>
+        </i>
+        <i class="star1" (click)="toggleStar(1)">
+          <mat-icon [class.active]="stars[1]">star_border</mat-icon>
+        </i>
+        <i class="star1" (click)="toggleStar(2)">
+          <mat-icon [class.active]="stars[2]">star_border</mat-icon>
+        </i>
+        <i class="star1" (click)="toggleStar(3)">
+          <mat-icon [class.active]="stars[3]">star_border</mat-icon>
+        </i>
+        <i class="star1" (click)="toggleStar(4)">
+          <mat-icon [class.active]="stars[4]">star_border</mat-icon>
+        </i> 0962359534 chị sương -->
+        </h3>
+      </div>
+    </div>
+
+
+  </section>
+
+ 
+  <footer>
+    
+    <p>Bản quyền © 2023 Bán hàng</p>
+  </footer>
+  

@@ -1,0 +1,76 @@
+<div>
+    <h1>xin chào : {{nameLogin}}</h1>
+   </div>
+   <div >
+       <button mat-button style="font-size: 20px;" > <mat-icon mat-list-icon class="cc">home</mat-icon> Home / </button>
+       <button mat-button style="font-size: 20px;"> <mat-icon class="nav-icon nav-icon-cart" class="cc">shopping_cart_checkout</mat-icon> Đơn Hàng đã mua</button>
+       
+   </div>
+   
+   <div class="menu">
+    <ul>
+      <li (click)="huyTim()">Tất cả đơn hàng</li>
+      <li (click)="timGioHangDaMua1(2)">Chờ duyệt</li>
+      <li (click)="timGioHangDaMua1(3)">Đã giao</li>
+      <li (click)="timGioHangDaMua1(4)">Đã hủy</li>
+    </ul>
+  </div>
+  
+  <div class="search-bar">
+    <input  [(ngModel)]="timHang" type="text" placeholder="Tìm kiếm...">
+    <button (click)=" timGioHangDaMua()" type="button">Tìm kiếm</button>
+    <button (click)="huyTim()">hủy</button>
+  </div>
+       <table class="data-table">
+         <thead>
+           <tr>
+               
+               <th>Tên hàng hóa</th>
+               <th>ảnh</th>
+               <th>Số lượng</th>
+               
+               <th>Giá</th>
+               <th>Thành tiền</th>
+               <th>Ngày mua</th>
+               <th>Trạng thái</th>
+               <th>Hủy đơn</th>
+           </tr>
+         </thead>
+       
+         <tr *ngFor="let item of dataGioHangDaMua; let i=index">
+            <td>{{item.TenHang}}</td>
+            <td><img [src]="item.Anh" alt="Lỗi" /> </td>
+            <td>{{item.SoLuong }}</td>
+            
+            <td class="price">
+              <a *ngIf="item.GiamGia!=0" class="price-sale">  {{item.DonGia |number:'1.0-0'}}đ </a> 
+              <a style="color: red;">{{item.DonGia-item.DonGia*item.GiamGia/100 |number:'1.0-0'}}đ</a>
+            </td>
+            <td>{{item.ThanhTien |number:'1.0-0'}}đ</td>
+            <td>{{item.NgayMua}}</td>
+
+            <td *ngIf="item.TrangThaiMua==2" style="color: rgb(255, 208, 0);">Đang chờ duyệt</td>
+            <td *ngIf="item.TrangThaiMua==3" style="color: rgb(0, 202, 44);">Giao hàng thành công</td>
+            <td *ngIf="item.TrangThaiMua==4" style="color: rgb(255, 0, 0);">Đơn hàng đã bị hủy</td>
+           <td>
+            <div>
+              <button *ngIf="item.TrangThaiMua==2" class="XacNhan" (click)=" xoaGioHang(item.GioHangID)" >Hủy đơn</button>
+              <button *ngIf="item.TrangThaiMua==3" class="XacNhan"  >Chi tiết</button>
+              <button *ngIf="item.TrangThaiMua==4" class="XacNhan"  >Chi tiết</button>
+            </div>
+           </td>
+           
+           
+            
+          </tr>
+           
+         
+       </table>
+   
+      
+      
+   
+       
+       
+   
+   

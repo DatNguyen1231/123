@@ -1,0 +1,94 @@
+.all{
+  
+  width: 100%;
+  height: 110%;
+  background-color: #ff7146;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ff7146;
+  
+  margin-top: 60px;
+}
+.logo{
+  display: flex;
+  color:  #ff7146;
+ 
+  width: 100%;
+  height: 100px;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+}
+.logo img{
+  width: 90px;
+  height: 90px;
+  margin-left: 100px;
+  margin-bottom: 100px;
+
+}
+.logo h1{
+  font-size: 30px;
+  margin-top: 40px;
+  margin-right:20px ;
+}
+
+
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 70px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-left: 500px;
+ 
+}
+
+.login h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.login input {
+  width: 250px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.login button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff5722;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.login button:hover {
+  background-color: #ff7146;
+}
+.DangKi{
+ 
+  
+  margin-top: 50px;
+}
+.DangKi button{
+  width: auto;
+  height: auto;
+  margin-left: 10px;
+}
+.mess {
+  margin-top: 10px;
+ 
+}

@@ -1,0 +1,110 @@
+<div>
+  <h1>xin chào :</h1>
+</div>
+<div>
+  <button mat-button style="font-size: 20px;"> <mat-icon mat-list-icon class="cc">home</mat-icon> Home / </button>
+  <button mat-button style="font-size: 20px;"> <mat-icon class="nav-icon-cart cc">shopping_cart</mat-icon> Giỏ hàng</button>
+</div>
+
+<div class="profile">
+  <div class="cl-profile-table">
+    <h1>Hồ Sơ của tôi</h1>
+    <table class="profile-table">
+      <tr>
+        <td class="td1">Tên đăng nhập:</td>
+        <td class="td2"><input type="text" [(ngModel)]="data.TenDangNhap" id="tenDangNhap" readonly></td>
+      </tr>
+      <tr>
+        <td class="td1">Mật khẩu:</td>
+        <td class="td2">
+          <input id="matKhau"  type="{{tyPe ? 'text' : 'password'}}" [(ngModel)]="data.MatKhau" [readonly]="_thayDoi">
+          <button class="save-button" (click)="hien()">Ẩn/Hiện</button>
+        </td>
+      </tr>
+      
+      
+      <tr>
+        <td class="td1">Họ và tên:</td>
+        <td class="td2"><input type="text" id="hoTen" [(ngModel)]="data. Ten" [readonly]="_thayDoi"></td>
+      </tr>
+      <tr>
+        <td class="td1">Email:</td>
+        <td class="td2"><input type="text" id="Email"  [(ngModel)]="data. Email" [readonly]="_thayDoi"></td>
+      </tr>
+      <tr>
+        <td class="td1">Số điện thoại:</td>
+        <td class="td2"><input type="text" id="SDT"  [(ngModel)]="data.SDT" [readonly]="_thayDoi"></td>
+      </tr>
+      <tr>
+        <td class="td1">Giới tính:</td>
+        <td class="td2">
+          <div class="check">
+            <input type="radio" id="male" name="gender" value="Nam"  [(ngModel)]="data. GioiTinh" [disabled]="_thayDoi">Nam
+            <input type="radio" id="female" name="gender" value="Nữ"  [(ngModel)]="data. GioiTinh" [disabled]="_thayDoi">Nữ
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="td1">Ngày sinh:</td>
+        <td class="td2"><input type="date" id="NgaySinh"  [(ngModel)]="data. NgaySinh" [readonly]="_thayDoi"></td>
+      </tr>
+      <tr>
+        <td class="td1">Địa chỉ:</td>
+        <td class="td2"><input type="text" id="DiaChi"  [(ngModel)]="data.DiaChi" [readonly]="_thayDoi"></td>
+      </tr>
+    </table>
+
+    <div *ngIf="_thayDoi" class="button-container">
+      <button class="save-button" (click)="thayDoi()">Thay đổi</button>
+    </div>
+    <div *ngIf="!_thayDoi" class="button-container">
+      <button class="save-button" (click)="luuThayDoi()">Lưu thông tin</button>
+    </div>
+  </div>
+</div>
+
+
+  
+   
+      <!-- <tr>
+        <td class="td1">Tên đăng nhập:</td>
+        <td class="td2"><input type="text" readonly></td>
+      </tr>
+      <tr >
+        
+        <td class="td1">Mật khẩu:</td>
+        <td class="td2">
+          <input id="pass" [(ngModel)]="pass"  [type]="tyPe?'text':'password'"[readonly]=_thayDoi>
+          <button class="save-button" (click)="hien()" >Ẩn/Hiện</button>
+        
+        </td>
+      
+      </tr>
+      <tr>
+        <td class="td1">Họ và tên:</td>
+        <td class="td2"><input type="text" [readonly]=_thayDoi></td>
+      </tr>
+      <tr>
+        <td class="td1">Email:</td>
+        <td class="td2"><input type="text"[readonly]=_thayDoi></td>
+      </tr>
+      <tr>
+        <td class="td1">Số điện thoại:</td>
+        <td class="td2"><input type="text"[readonly]=_thayDoi></td>
+      </tr>
+      <tr>
+        <td class="td1">Giới tính:</td>
+        <td class="td2">
+            <div class="check" >
+                <input type="radio" id="male" name="gender" value="Nam"[disabled]=_thayDoi>Nam
+                <input type="radio" id="female" name="gender" value="Nữ" [disabled]=_thayDoi>Nữ
+            </div>
+            
+        </td>
+      </tr>
+      <tr>
+        <td class="td1">Ngày sinh:</td>
+        <td class="td2"><input type="date"[readonly]=_thayDoi></td>
+      </tr>
+    -->
+  

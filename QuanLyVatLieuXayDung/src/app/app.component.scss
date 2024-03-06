@@ -1,0 +1,133 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/* Thay đổi màu sắc của các thành phần trong ứng dụng */
+/* ví dụ: thay đổi màu của toolbar */
+.mat-toolbar {
+  background-color: #f35900;
+  color: #ff4800;
+}
+
+.nav-NguoiDung {
+  display:inline-block;
+  align-items: center;
+  background-color: #ee4d2d;
+  color: #ffffff;
+  padding: 0 16px;
+}
+.giua{
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 16px;
+}
+
+.logo img {
+  height: 50px;
+  width: 50px;
+}
+
+.logo h1 {
+  margin-top: 3px;
+  margin-left: auto;
+  margin-left: 0px;
+  font-size: 20px;
+}
+
+.mat-button {
+  color: #ffffff;
+  margin-right: 16px;
+}
+
+.cart-button {
+  margin-left: auto;
+}
+.nav-height {
+  min-height: 100px !important;
+  height:100px !important;
+}
+
+.content-move-right {
+  margin-left: 170px !important;
+  transition: ease 0.2s;
+}
+
+.content-move-left {
+  margin-left: 10px !important;
+  transition: ease 0.1s;
+}
+
+.mat-toolbar {
+  background-color: #ee4d2d;
+  display: flex;
+  justify-content: center;
+}
+
+button.mat-button {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+button.mat-button:hover {
+  text-decoration: underline;
+}
+.notification-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -10px;
+  right: -8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.button-text {
+  margin-left: 8px;
+}
+
+
+
+// .my-badge {
+//   position: relative;
+//   top: -10px;
+//   left: -7px;
+//   font-size: smaller;
+//   background-color: red;
+//   color: white;
+// }
+// .w3-badge,
+// .w3-tag {
+//   background-color: #000;
+//   color: #fff;
+//   display: inline-block;
+//   padding-left: 8px;
+//   padding-right: 8px;
+//   text-align: center;
+// }

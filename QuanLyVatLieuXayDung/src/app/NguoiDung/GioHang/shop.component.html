@@ -1,0 +1,64 @@
+<div>
+ <h1>xin chào : {{nameLogin}}</h1>
+</div>
+<div >
+    <button mat-button style="font-size: 20px;" > <mat-icon mat-list-icon class="cc">home</mat-icon> Home / </button>
+    <button mat-button style="font-size: 20px;"> <mat-icon class="nav-icon nav-icon-cart" class="cc">shopping_cart</mat-icon> Giỏ hàng</button>
+    
+</div>
+
+
+
+    <table class="data-table">
+      <thead>
+        <tr>
+            <th><input  [(ngModel)]="sv.check" (change)="checkALL()" type="checkbox" id="myCheckbox" ></th>
+            <th>Tên hàng hóa</th>
+            <th>ảnh</th>
+            <th>Số lượng</th>
+            
+            <th>Giá</th>
+            <th>Thành tiền</th>
+            <th>Xóa</th>
+        </tr>
+      </thead>
+    
+       
+        <tr *ngFor="let item of dataGioHang; let i=index">
+          <td><input [(ngModel)]="sv.isAllSelected[i]" type="checkbox" id="myCheckbox"></td>  
+          <td>{{item.TenHang}}</td>
+          <td><img [src]="item.Anh" alt="Lỗi" /> </td>
+          <td class="cot4">
+
+            <div class="ThemXoa">
+              <button (click)="btnAdd(i ,-1)"><mat-icon mat-list-icon>remove_circle</mat-icon> </button>
+              <input  [ngClass]="{'input-soluong':checkSoLuong}"(blur)="suaGioHang(i,1)" id="SoLuong" [(ngModel)]="item.SoLuong" type="number"   >
+
+              <button (click)="btnAdd(i ,1)"><mat-icon mat-list-icon> add_circle </mat-icon></button>
+            </div>
+                
+           
+          </td>
+          
+          <td class="price">
+            <a *ngIf="item.GiamGia!=0" class="price-sale">  {{item.DonGia |number:'1.0-0'}} </a>đ  
+              <a style="color: red;">{{item.DonGia-item.DonGia*item.GiamGia/100 |number:'1.0-0'}}đ</a>
+          </td>
+       
+          <td>{{item.ThanhTien |number:'1.0-0'}}đ</td>
+         
+          <td><button class="XacNhan"  (click)="xoaGioHang(item.ID)">Xóa</button></td>
+        </tr>
+        
+      
+    </table>
+
+   
+    <div class="cart-total">
+      <p>Tổng cộng: {{getTongTien()| number:'1.0-0'}}đ</p>
+      <button (click)="mua()" >Xác nhận đơn hàng</button>
+
+    </div>
+    
+    
+

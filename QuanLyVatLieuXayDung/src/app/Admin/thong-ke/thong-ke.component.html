@@ -1,0 +1,54 @@
+<div class="menu">
+    <ul>
+    
+      <li (click)="getGioHangDaMua(3)">Đã giao</li>
+      <li (click)="getGioHangDaMua(4)">Đã hủy</li>
+    </ul>
+ <!-- <-- </div>
+  <div class="search-bar">
+    <input   type="text" placeholder="Tìm kiếm...">
+    <button  type="button">Tìm kiếm</button>
+    <button >hủy</button>
+  </div> --> 
+
+  <table class="data-table">
+    <thead>
+      <tr>
+          <th>Tên Tài khoản</th>
+          <th>Tên hàng hóa</th>
+          <th>ảnh</th>
+          <th>Số lượng</th>
+          
+          <th>Giá</th>
+          <th>Thành tiền</th>
+          <th>Ngày bán</th>
+          <th>Trạng thái</th>
+      </tr>
+    </thead>
+  
+    <tr *ngFor="let item of dataGioHangDaMua; let i=index">
+        <td>{{item.TenDangNhap}}</td>
+       <td>{{item.TenHang}}</td>
+       <td><img [src]="item.Anh" alt="Lỗi" /> </td>
+       <td>{{item.SoLuong }}</td>
+       
+       <td class="price">
+         <a *ngIf="item.GiamGia!=0" class="price-sale">  {{item.DonGia |number:'1.0-0'}}đ </a> 
+         <a style="color: red;">{{item.DonGia-item.DonGia*item.GiamGia/100 |number:'1.0-0'}}đ</a>
+       </td>
+       <td>{{item.ThanhTien |number:'1.0-0'}}đ</td>
+       <td>{{item.NgayMua}}</td>
+       <td *ngIf="item.TrangThaiMua==2" style="color: rgb(255, 208, 0);">Đang chờ duyệt</td>
+       <td *ngIf="item.TrangThaiMua==3" style="color: rgb(0, 202, 44);">Giao hàng thành công</td>
+       <td *ngIf="item.TrangThaiMua==4" style="color: rgb(255, 0, 0);">Đơn hàng đã bị hủy</td>
+      
+       
+     </tr>
+      
+    
+  </table>
+
+  <div class="cuoi">
+    <h2 >Tổng thu nhập:{{tong|number:'1.0-0'}}đ</h2>
+    
+  </div>

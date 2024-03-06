@@ -1,0 +1,131 @@
+<div class="menu" *ngIf="Login">
+ 
+  <!-- đăng nhập với quyền người dùng -->
+  <mat-toolbar *ngIf="loaiTK=='user'" color="#ee4d2d" class="nav-NguoiDung">
+    <div class="logo" (click)="home()">
+      <img src="assets/img/logo.png" alt="" style="height: 50px; width: 50px;">
+      <h1> Xốp Bi</h1>
+    </div>
+    <div class="giua">
+      <a mat-button [routerLink]="['/home']" [routerLinkActive]="'active-home'">
+        <mat-icon>home</mat-icon>Home
+      </a>
+      <a mat-button [routerLink]="['/Shop']" [routerLinkActive]="'active-home'">
+        <mat-icon>add_shopping_cart</mat-icon>Giỏ Hàng
+      </a>
+      <a mat-button [routerLink]="['/GioHangDaBan']" [routerLinkActive]="'active-home'">
+        <mat-icon>shopping_cart_checkout</mat-icon>Đơn hàng đã mua
+      </a>
+      <a mat-button [routerLink]="['/KhachHang']" [routerLinkActive]="'active-home'">
+        <mat-icon>person</mat-icon>Tài Khoản của tôi
+      </a>
+    </div>
+    
+    
+      <button mat-button [matMenuTriggerFor]="menu"  class="cart-button"><mat-icon mat-list-icon>account_circle</mat-icon>{{sv.nameLogin}}</button>
+      <mat-menu #menu="matMenu">
+
+        <button mat-menu-item><mat-icon>person</mat-icon>Tài Khoản của tôi</button>
+        <button mat-menu-item><mat-icon>shopping_cart_checkout</mat-icon>Đơn hàng đã mua</button>
+        <button mat-menu-item (click)="logOut()"><mat-icon>settings_power</mat-icon> Đăng Xuất</button>
+      </mat-menu>
+  
+  </mat-toolbar>
+ 
+  <!-- Đăng nhập với quyền Admin -->
+  <mat-toolbar *ngIf="loaiTK=='admin'" color="#ee4d2d" class="nav-height" style="color: #ffffff;">
+    
+    
+    <mat-toolbar-row>
+      
+        
+      <!-- <button (click)="openLeftSide()" mat-icon-button>
+        
+        <mat-icon >menu</mat-icon>
+        
+      </button> -->
+      <div class="logo"   style="display:  flex;">
+        <img src="assets/img/logo.png"  alt="" style="height: 50px; width: 50px;">
+        <h1 style=" margin-top:15px">Xốp Bi</h1>
+      </div>
+      
+
+      
+      <span class="menu-spacer" style="width: 100px;"></span>
+      <div>
+        <div>
+
+        </div>
+      <!-- <button mat-button [matMenuTriggerFor]="menu"><mat-icon mat-list-icon>home</mat-icon> Home</button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item><mat-icon>store</mat-icon>CC</button>
+        <button mat-menu-item><mat-icon>store</mat-icon> cửa hàng</button>
+      </mat-menu> -->
+
+      <a  mat-button  [routerLink]="['/DuyetDon']" [routerLinkActive]="'active-home'">
+        <span class="notification-badge">{{soLuong}}</span>
+        <mat-icon>check_circle</mat-icon>Duyệt đơn mua
+        
+       
+      </a>
+      
+        <a  mat-button  [routerLink]="['/kho']" [routerLinkActive]="'active-kho'">
+          <mat-icon>store</mat-icon>Kho
+        </a>
+        
+        <a mat-button [routerLink]="['/ThongKe']">
+          <mat-icon>assessment</mat-icon>Thống kê
+         
+        </a>
+        <a mat-button [routerLink]="['/QuanLyTK']">
+          <mat-icon>person</mat-icon>Quản lý tài khoản
+         
+        </a>
+        
+        <a mat-button (click)="logOut()">
+          <mat-icon >settings_power</mat-icon> Log out
+        </a>
+      </div>
+    </mat-toolbar-row>
+    
+  </mat-toolbar>
+</div>
+<mat-sidenav-container>
+  
+  <mat-sidenav #sidenav (closed)="closeLeftSide()">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/dashboard']">
+        <mat-icon mat-list-icon>home</mat-icon> Bảng điều khiển
+      </a>
+      <a mat-list-item [routerLink]="['/students']">
+        <mat-icon>folder_shared</mat-icon> Học Sinh
+      </a>
+      <a mat-list-item [routerLink]="['/about']">
+        <mat-icon>person</mat-icon> Vài Nét
+      </a>
+      <a mat-list-item (click)="sidenav.toggle()" mat-list-item>
+        <mat-icon>close</mat-icon> Đóng
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <div
+      style="
+        height: 90vh;
+        margin-top: 20px;
+        margin-right: 10px;
+        margin-left: 10px;
+      "
+      [ngClass]="{
+        'content-move-left': !isOpened,
+        'content-move-right': isOpened
+      }"
+    >
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

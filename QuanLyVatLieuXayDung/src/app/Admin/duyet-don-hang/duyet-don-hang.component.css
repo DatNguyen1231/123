@@ -1,0 +1,178 @@
+/* CSS cho phần ngoài của giỏ hàng */
+.cart-container {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* CSS cho tiêu đề */
+  .cart-container h1 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* CSS cho các nút menu */
+  .menu-button {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #333;
+  }
+  
+  .menu-button .nav-icon {
+    margin-right: 5px;
+  }
+  
+  /* CSS cho bảng dữ liệu */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .data-table th {
+    background-color: #f5f5f5;
+    text-align: left;
+    padding: 10px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .data-table td {
+    padding: 1px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .data-table img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .data-table input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  .data-table .cot4 {
+    position: relative;
+  }
+  
+  .data-table .cot4 input[type="number"] {
+    width: 50px;
+    padding: 5px;
+  }
+  
+  .data-table .cot4 button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    color: #333;
+  }
+  
+  
+  /* CSS cho phần tổng cộng */
+  .cart-total {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .clxacnhan{
+    display: flex;
+    flex-direction: column;
+}
+  .XacNhan {
+    
+    padding: 10px 20px;
+    width: 120px;
+    height: 30px;
+    margin: 5px;
+    background-color: #15fc00;
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .huy{
+    padding: 10px 20px;
+    width: 120px;
+    height: 30px;
+    margin: 5px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .XacNhan:hover {
+    background-color: #02b629;
+  }
+  
+  .XacNhan:active {
+    background-color: #22aa00;
+  }
+  .huy:hover {
+    background-color: #f05050;
+  }
+  
+  .huy:active {
+    background-color: #f35050;
+  }
+  .cart-total p {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .cart-total button {
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  
+  
+  .ThemXoa {
+    display: flex;
+    align-items: center;
+  }
+  
+  
+  .price-sale {
+    color: black;
+  
+    text-decoration: line-through;
+  }
+  
+  .input-soluong{
+      
+    background-color: #ffacac;
+   color: #ff0000;
+   animation: shake 0.5s;
+  }
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }

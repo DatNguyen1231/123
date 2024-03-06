@@ -1,0 +1,94 @@
+<div #scrollToTop></div>
+
+
+
+
+
+<div class="form-container">
+  <h1>Nhập hàng</h1>
+  <form id="form" class="input-form">
+    <div class="input-group">
+      <label for="product_name">Tên hàng hóa</label>
+      <input [(ngModel)]="data.TenHang" type="text" id="product_name" name="product_name" required>
+    </div>
+    <div class="input-group">
+      <label for="quantity">Số lượng</label>
+      <input (keyup)="sumThanhTien()" [(ngModel)]="data.SoLuongHH" type="number" id="quantity" name="quantity" required>
+    </div>
+    <div class="input-group">
+      <label for="unit_price">Đơn giá</label>
+      <input (keyup)="sumThanhTien()" [(ngModel)]="data.DonGia" type="number" id="unit_price" name="unit_price" required>
+    </div>
+    <div class="input-group">
+      <label for="gia_goc">Giá gốc</label>
+      <input [(ngModel)]="data.GiaGoc" type="text" id="gia_goc" name="gia_goc" readonly>
+    </div>
+    <div class="input-group">
+      <label for="giam_gia">Giảm giá</label>
+      <input (keyup)="sumThanhTien()" [(ngModel)]="data.GiamGia" type="number" id="giam_gia" name="giam_gia">
+    </div>
+    <div class="input-group">
+      <label for="thanh_tien">Thành tiền</label>
+      <input [(ngModel)]="data.ThanhTien" type="text" id="thanh_tien" name="thanh_tien" readonly>
+    </div>
+    <div class="input-group">
+      <input id="img" type="file" (change)="onFileSelected($event)" #fileInput>
+      <br>
+      <label *ngIf="seeImg">
+        Xem trước
+        <br>
+        <img [src]="data.Anh" alt="" style="width: 50px; height: 50px;">
+      </label>
+    </div>
+    <button *ngIf="!sua" (click)="themKho()">Nhập hàng</button>
+    <br>
+    <button *ngIf="sua" (click)="suaKho()">Sửa hàng</button>
+  </form>
+</div>
+
+  <div class="form-container"> 
+    <input type="text" [(ngModel)]="key" placeholder="Tìm kiếm theo tên hàng" (keyup)="searchByTenHang()">
+    <button (click)="cancelSearch()">Hủy</button>
+  </div>
+ 
+ 
+  <div class="table-container">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Tên hàng hóa</th>
+          <th>ảnh</th>
+          <th>Số lượng</th>
+          <th>Đơn giá</th>
+          <th>Giá Gốc</th>
+          <th>Giảm giá</th>
+          <th>Thành tiền</th>
+          <th>Sửa</th>
+          <th>Xóa</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+      
+        <tr *ngFor="let item of getDataUser ,let i=index">
+          <td>{{item.TenHang}}</td>
+          <td><img [src]="item.Anh" alt="Lỗi" style="width: 200px ;height: 200px;" /> </td>
+          <td >
+            {{item.SoLuongHH}} <br><br>
+            
+          </td>
+          <td>{{item.DonGia |number:'1.0-0'}}đ  </td>
+          <td>{{item.GiaGoc |number:'1.0-0'}}đ  </td>
+          <td> {{item.GiamGia}} </td>
+          <td>{{item.ThanhTien|number:'1.0-0'}}đ</td>
+          <td><button (click)="btnSua(i)" class="edit-btn">Sửa</button></td>
+          <td><button (click)="xoaKho(item.ID)">Xóa</button></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+
+
+
+  

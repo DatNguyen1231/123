@@ -1,0 +1,127 @@
+.form-container {
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+.input-group label {
+  font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group input[type="number"],
+.input-group input[type="file"] {
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.input-group input[readonly] {
+  background-color: #f5f5f5;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff6600; /* Màu cam giống Shopee */
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #ff4d00; /* Màu cam nhạt khi hover */
+}
+
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th {
+  background-color: #f5f5f5;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.data-table td {
+  padding: 1px;
+  border-bottom: 1px solid #ccc;
+}
+
+.data-table img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.data-table input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.data-table .cot4 {
+  position: relative;
+}
+
+.data-table .cot4 input[type="number"] {
+  width: 50px;
+  padding: 5px;
+}
+
+.data-table .cot4 button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  color: #333;
+}
+
+  button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4797ec;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0062cc;
+  }
+  
+  img {
+    width: 30%;
+    height: 30%;
+    object-fit: cover;
+  }
+  .custom-snackbar {
+    background-color: #f44336; /* Màu nền */
+    color: white; /* Màu văn bản */
+    font-size: 18px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ in đậm */
+  }
